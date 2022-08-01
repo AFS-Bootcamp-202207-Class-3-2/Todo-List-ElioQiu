@@ -1,10 +1,10 @@
 import React from 'react'
 
 export default function TodoItem(props) {
-    const {value} = this.props;
+    const {name} = props;
     return (
         <div>
-            value
+            <input type="text" value={name} disabled/>
         </div>
     )
 }

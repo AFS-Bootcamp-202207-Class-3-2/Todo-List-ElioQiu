@@ -3,12 +3,18 @@ import TodoGroup from "../TodoGroup";
 import TodoGenerator from "../TodoGenerator";
 
 export default function TodoList() {
-    const [todoList, setTodoList] = useState(Array(0))
+    const [todoList, setTodoList] = useState([])
+
+    const addTodo = (todoObj) => {
+        const newTodos = [todoObj,...todoList]
+        setTodoList(newTodos)
+    }
+
     return (
         <div>
+            <span>Todo List</span>
             <TodoGroup todoList = {todoList} />
-            <br />
-            <TodoGenerator />
+            <TodoGenerator addTodo = {addTodo} />
         </div>
     )
 }
