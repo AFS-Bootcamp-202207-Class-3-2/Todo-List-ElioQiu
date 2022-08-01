@@ -1,4 +1,5 @@
 import React, { useState} from 'react'
+import './index.css'
 import {nanoid} from 'nanoid'
 
 export default function TodoGenerator(props) {
@@ -19,8 +20,8 @@ export default function TodoGenerator(props) {
     }
     return (
         <div>
-            <input type="text" value={item} onChange={onUpdateTodo}  />
-            <input type="button" value="add" onClick={onAddTodo} />
+            <input type="text" value={item} onChange={onUpdateTodo} className={"GeneratorInput"}  />
+            <input type="button" value="add" onClick={onAddTodo} className={"AddButton"}/>
         </div>
     )
 }
