@@ -1,6 +1,6 @@
 import "./index.css";
 import { useDispatch } from "react-redux";
-import { doneTodo } from "../todosSlice";
+import { doneTodo, removeTodo } from "../todosSlice";
 
 
 export default function TodoItem(props) {
@@ -11,12 +11,18 @@ export default function TodoItem(props) {
     dispatch(doneTodo(todo.id));
   }
 
+  const onDeleteItem = () => {
+    dispatch(removeTodo(todo.id));
+  }
+
   return (
-    <div>
-      <div className={todo.done ? "TodoDoneItem" : "TodoItem"} onClick={onTodoDone}>
+    <div className="TodoItem">
+      <span className={todo.done ? "Done" : ""} onClick={onTodoDone}>
         {todo.text}
-      </div>
+      </span>
+      <span onClick={onDeleteItem}>
+        x
+      </span>
     </div>
-      
   );
 }

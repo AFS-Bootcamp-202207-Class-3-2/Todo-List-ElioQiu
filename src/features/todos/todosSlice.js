@@ -26,7 +26,13 @@ export const todosSlice = createSlice({
                 }
             })
         },
-        
+        removeTodo: (state, action) => {
+            // const index = state.findIndex(todo => todo.id === action.payload);
+            // if (index > -1) {
+            //     state.splice(index, 1);
+            // }
+            return state.filter(todo => todo.id !== action.payload);
+        }
     }
 })
 
