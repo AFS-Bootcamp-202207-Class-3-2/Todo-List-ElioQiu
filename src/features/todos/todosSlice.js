@@ -18,9 +18,17 @@ export const todosSlice = createSlice({
                 text: action.payload,
                 done: false,
             })
-        }
+        },
+        doneTodo: (state, action) => {
+            state.map(todo => {
+                if(todo.id === action.payload){
+                    todo.done = !todo.done;
+                }
+            })
+        },
+        
     }
 })
 
-export const { addTodo } = todosSlice.actions;
-export default todosSlice.reducer;
+export const { addTodo, doneTodo, removeTodo } = todosSlice.actions;
+export default todosSlice.reducer; 
