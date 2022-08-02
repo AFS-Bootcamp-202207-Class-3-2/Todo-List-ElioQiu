@@ -5,7 +5,7 @@ export default function TodoItem(props) {
   const { name } = props;
   return (
     <div>
-      <input type="text" value={name} className={"TodoItem"} disabled />
+      <input type="text" value={name} className="TodoItem" disabled />
     </div>
   );
 }

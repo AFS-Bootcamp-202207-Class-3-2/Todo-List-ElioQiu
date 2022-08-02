@@ -24,13 +24,13 @@ export default function TodoGenerator(props) {
         type="text"
         value={item}
         onChange={onUpdateTodo}
-        className={"GeneratorInput"}
+        className="GeneratorInput"
       />
       <input
         type="button"
         value="add"
         onClick={onAddTodo}
-        className={"AddButton"}
+        className="AddButton"
       />
     </div>
   );
