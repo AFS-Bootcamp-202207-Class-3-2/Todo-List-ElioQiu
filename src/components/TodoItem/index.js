@@ -1,8 +1,7 @@
-import React from "react";
 import "./index.css";
 
 export default function TodoItem(props) {
-  const { name } = props;
+  const { name } = props.todo;
   return (
     <div>
       <input type="text" value={name} className="TodoItem" disabled />

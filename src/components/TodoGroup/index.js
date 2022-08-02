@@ -1,4 +1,3 @@
-import React from "react";
 import TodoItem from "../TodoItem";
 
 export default function TodoGroup(props) {
@@ -6,7 +5,7 @@ export default function TodoGroup(props) {
   return (
     <div>
       {todoList.map((todo) => {
-        return <TodoItem key={todo.id} {...todo} />;
+        return <TodoItem key={todo.id} todo={todo} />;
       })}
     </div>
   );
