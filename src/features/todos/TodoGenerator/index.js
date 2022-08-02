@@ -1,9 +1,11 @@
-import { useState } from "react";
 import "./index.css";
-import { nanoid } from "nanoid";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTodo } from "../todosSlice";
 
 export default function TodoGenerator(props) {
   const [item, setItem] = useState("");
+  const dispatch = useDispatch();
 
   const onUpdateTodo = (event) => {
     setItem(event.target.value);
@@ -14,8 +16,7 @@ export default function TodoGenerator(props) {
       alert("输入不能为空");
       return;
     }
-    const todoObj = { id: nanoid(), name: item.trim() };
-    props.addTodo(todoObj);
+    dispatch(addTodo(item.trim()))
     setItem("");
   };
   return (
