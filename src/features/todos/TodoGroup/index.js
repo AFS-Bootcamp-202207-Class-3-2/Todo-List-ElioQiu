@@ -1,10 +1,10 @@
 import TodoItem from "../TodoItem";
 
 export default function TodoGroup(props) {
-  const { todoList } = props;
+  const { todos } = props;
   return (
     <div>
-      {todoList.map((todo) => {
+      {todos.map((todo) => {
         return <TodoItem key={todo.id} todo={todo} />;
       })}
     </div>

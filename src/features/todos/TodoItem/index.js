@@ -1,10 +1,10 @@
 import "./index.css";
 
 export default function TodoItem(props) {
-  const { name } = props.todo;
+  const { text } = props.todo;
   return (
     <div>
-      <input type="text" value={name} className="TodoItem" disabled />
+      <input type="text" value={text} className="TodoItem" disabled />
     </div>
   );
 }
