@@ -1,3 +1,7 @@
-div {
-    margin: 10px;
+.TodoList {
+    margin: 20px;
+    height: 100%;
+    border: gray solid 1px;
+    border-radius: 10px;
+    background-color: beige;
 }

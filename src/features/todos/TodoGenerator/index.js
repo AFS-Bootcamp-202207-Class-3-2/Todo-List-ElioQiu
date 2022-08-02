@@ -20,12 +20,13 @@ export default function TodoGenerator(props) {
     setItem("");
   };
   return (
-    <div>
+    <div className="TodoGenerator">
       <input
         type="text"
         value={item}
         onChange={onUpdateTodo}
         className="GeneratorInput"
+        placeholder="Input your todo then enter"
       />
       <input
         type="button"

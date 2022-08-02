@@ -7,10 +7,12 @@ export default function TodoList() {
     const todos = useSelector(state => state.todos)
 
     return (
-        <div>
-            <span>Todo List</span>
+        <div className="TodoList">
+            <h2>Todo List</h2>
             <TodoGroup todos = {todos} />
+            <br/>
             <TodoGenerator />
+            <br/>
         </div>
     )
 }
