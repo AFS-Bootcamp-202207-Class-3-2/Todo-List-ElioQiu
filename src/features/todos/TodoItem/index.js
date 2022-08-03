@@ -3,8 +3,8 @@ import {useDispatch} from "react-redux";
 import {doneTodo, removeTodo} from "../todosSlice";
 import {deleteTodo, updateTodo, updateTodoText} from "../../../api/todos";
 import React, {useRef, useState} from "react";
-import {Button, Modal, Form, Input} from "antd";
-import {DeleteOutlined, EditOutlined} from '@ant-design/icons';
+import {Button, Modal, Form, Input, Popconfirm} from "antd";
+import {DeleteOutlined, EditOutlined } from '@ant-design/icons';
 
 
 
@@ -48,8 +48,14 @@ export default function TodoItem(props) {
             <div>
                 <Button type="primary" shape="circle" icon={<EditOutlined/>}
                         onClick={onHandleTodo}/>
-                <Button type="danger" shape="circle" icon={<DeleteOutlined/>}
-                        onClick={onDeleteItem}/>
+                <Popconfirm
+                    title="Are you sure to delete this card?"
+                    onConfirm={onDeleteItem}
+                    okText="Yes"
+                    cancelText="No"
+                >
+                    <Button type="danger" shape="circle" icon={<DeleteOutlined/>} />
+                </Popconfirm>
             </div>
 
             <Modal
