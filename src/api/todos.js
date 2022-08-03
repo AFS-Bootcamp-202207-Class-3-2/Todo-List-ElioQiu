@@ -9,9 +9,13 @@ export const saveTodo = (text) =>{
 };
 
 export const updateTodo = (todo) =>{
-    return api.put("todos/"+todo.id,{done : !todo.done})
+    return api.put("todos/" + todo.id,{done : !todo.done})
 };
 
 export const deleteTodo = (todo) =>{
     return api.delete("/todos/" + todo.id);
 };
+
+export const updateTodoText = (id, text) => {
+    return api.put("todos/" + id, text)
+}
