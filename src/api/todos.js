@@ -1,6 +1,6 @@
 import api from "./api";
 
-export const getTodoList = () =>{
+export const getTodos = () =>{
     return api.get("todos");
 };
 
@@ -12,6 +12,6 @@ export const updateTodo = (todo) =>{
     return api.put("todos/"+todo.id,{done : !todo.done})
 };
 
-export const removeTodo = (todo) =>{
+export const deleteTodo = (todo) =>{
     return api.delete("/todos/" + todo.id);
 };
