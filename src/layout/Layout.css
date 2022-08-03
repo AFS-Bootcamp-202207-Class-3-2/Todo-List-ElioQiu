@@ -38,5 +38,6 @@
     position: absolute;
     top: 60px;
     bottom: 60px;
+    background-color: beige;
     /*以上设置是重点必须的*/
 }
