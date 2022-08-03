@@ -2,6 +2,7 @@ import "./index.css";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../todosSlice";
+import {saveTodo} from "../../../api/todos";
 
 export default function TodoGenerator() {
   const [item, setItem] = useState("");
@@ -16,8 +17,10 @@ export default function TodoGenerator() {
       alert("输入不能为空");
       return;
     }
-    dispatch(addTodo(item.trim()))
-    setItem("");
+    saveTodo(item.trim()).then(response => {
+      dispatch(addTodo(response.data))
+      setItem("");
+    })
   };
   return (
     <div className="TodoGenerator">

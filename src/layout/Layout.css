@@ -17,7 +17,6 @@
     height: 60px;
     position: absolute;
     top: 0;
-    /*以上设置是重点必须的*/
     background: aquamarine;
     color: #fff;
     font-size:20px;
@@ -30,7 +29,6 @@
     bottom: 0;
     background: aquamarine;
     color: black;
-    /*以上设置是重点必须的*/
     text-align: center;
 }
 .MyContent {
@@ -39,5 +37,5 @@
     top: 60px;
     bottom: 60px;
     background-color: beige;
-    /*以上设置是重点必须的*/
+    overflow: scroll;
 }

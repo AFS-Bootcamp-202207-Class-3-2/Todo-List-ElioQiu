@@ -13,11 +13,7 @@ export const todosSlice = createSlice({
     initialState,
     reducers: {
         addTodo: (state, action) => {
-            state.push({
-                id: Date.now(),
-                text: action.payload,
-                done: false,
-            })
+            state.push(action.payload)
         },
         doneTodo: (state, action) => {
             state.map(todo => {
