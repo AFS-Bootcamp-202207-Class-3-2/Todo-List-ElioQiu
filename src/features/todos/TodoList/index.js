@@ -1,7 +1,7 @@
 import {useSelector} from 'react-redux'
 import './index.css'
 import TodoGroup from "../TodoGroup";
-import TodoGenerator from "../TodoGenerator";
+import React from "react";
 
 export default function TodoList() {
     const todos = useSelector(state => state.todos)
@@ -10,9 +10,6 @@ export default function TodoList() {
         <div className="TodoList">
             <h2>Todo List</h2>
             <TodoGroup todos = {todos} />
-            {/*<br/>*/}
-            {/*<TodoGenerator />*/}
-            {/*<br/>*/}
         </div>
     )
 }

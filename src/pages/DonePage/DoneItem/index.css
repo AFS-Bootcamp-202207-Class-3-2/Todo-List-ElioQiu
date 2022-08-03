@@ -1,0 +1,11 @@
+.DoneItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    cursor: pointer;
+}
