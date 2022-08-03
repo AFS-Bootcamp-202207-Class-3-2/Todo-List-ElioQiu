@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../todosSlice";
 
-export default function TodoGenerator(props) {
+export default function TodoGenerator() {
   const [item, setItem] = useState("");
   const dispatch = useDispatch();
 

@@ -10,9 +10,9 @@ export default function TodoList() {
         <div className="TodoList">
             <h2>Todo List</h2>
             <TodoGroup todos = {todos} />
-            <br/>
-            <TodoGenerator />
-            <br/>
+            {/*<br/>*/}
+            {/*<TodoGenerator />*/}
+            {/*<br/>*/}
         </div>
     )
 }
