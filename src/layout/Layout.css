@@ -6,7 +6,7 @@
     flex-direction: row;
     justify-content: center;
     margin-left: 10px;
-    padding: 10px;
+    /*padding: 10px;*/
     cursor: pointer;
 }
 .Menu {
@@ -26,13 +26,12 @@
 .MyFooter {
     width: 100%;
     height: 60px;
-    background: aquamarine;
-    color: #fff;
     position: absolute;
     bottom: 0;
+    background: aquamarine;
+    color: black;
     /*以上设置是重点必须的*/
     text-align: center;
-    line-height: 40px;
 }
 .MyContent {
     width: 100%;
