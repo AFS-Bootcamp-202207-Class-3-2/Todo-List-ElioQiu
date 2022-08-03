@@ -1,6 +1,7 @@
 import "./index.css";
 import { useDispatch } from "react-redux";
 import { doneTodo, removeTodo } from "../todosSlice";
+import {updateTodo} from "../../../api/todos";
 
 
 export default function TodoItem(props) {
@@ -8,7 +9,9 @@ export default function TodoItem(props) {
   const dispatch = useDispatch();
 
   const onTodoDone = () => {
-    dispatch(doneTodo(todo.id));
+      updateTodo(todo).then(response => {
+          dispatch(doneTodo(response.data));
+      })
   }
 
   const onDeleteItem = () => {

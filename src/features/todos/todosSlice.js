@@ -16,10 +16,11 @@ export const todosSlice = createSlice({
             state.push(action.payload)
         },
         doneTodo: (state, action) => {
-            state.map(todo => {
-                if(todo.id === action.payload){
-                    todo.done = !todo.done;
+            return state.map(todo => {
+                if(todo.id === action.payload.id){
+                    return action.payload
                 }
+                return todo
             })
         },
         removeTodo: (state, action) => {
