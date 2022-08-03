@@ -14,9 +14,9 @@ export default function LayoutPage() {
             <Layout>
                 <Header className="MyHeader">
                     <div className="MenuList">
-                        <NavLink className="Menu" activeClassName="active" to="/"><HomeOutlined />Home</NavLink>
-                        <NavLink className="Menu" activeClassName="active" to="/help"><QuestionCircleOutlined />Help</NavLink>
-                        <NavLink className="Menu" activeClassName="active" to="/done"><CheckOutlined />Done</NavLink>
+                        <NavLink className="Menu" activeclassname="active" to="/"><HomeOutlined />Home</NavLink>
+                        <NavLink className="Menu" activeclassname="active" to="/help"><QuestionCircleOutlined />Help</NavLink>
+                        <NavLink className="Menu" activeclassname="active" to="/done"><CheckOutlined />Done</NavLink>
                     </div>
                 </Header>
                 <Content className="MyContent">
