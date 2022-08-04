@@ -1,11 +1,11 @@
 import api from "./api";
 
 export const getTodos = () =>{
-    return api.get("todos");
+    return api.get("/todos");
 };
 
 export const saveTodo = (text) =>{
-    return api.post("todos",{text});
+    return api.post("/todos",{text});
 };
 
 export const deleteTodo = (todo) =>{
@@ -13,5 +13,5 @@ export const deleteTodo = (todo) =>{
 };
 
 export const updateTodo = (id, text) => {
-    return api.put("todos/" + id, text)
+    return api.put("/todos/" + id, text)
 }

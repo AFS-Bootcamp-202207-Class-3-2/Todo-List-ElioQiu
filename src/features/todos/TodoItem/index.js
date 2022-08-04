@@ -21,7 +21,9 @@ export default function TodoItem(props) {
 
     const onDeleteItem = () => {
         deleteTodo(todo).then(response => {
-            dispatch(removeTodo(response.data));
+            if (response.status === 204) {
+                dispatch(removeTodo(todo.id));
+            }
         })
     }
 
