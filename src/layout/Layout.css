@@ -39,3 +39,6 @@
     background-color: beige;
     overflow: scroll;
 }
+::-webkit-scrollbar {
+    width: 0;
+}

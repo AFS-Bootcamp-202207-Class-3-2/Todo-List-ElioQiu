@@ -7,10 +7,15 @@ import {useNavigate} from "react-router-dom";
 export default function NotFoundPage() {
     const navigate = useNavigate()
     useEffect(() => {
-        setTimeout(() =>{
+        let timer = setTimeout(() =>{
             navigate('/')
         }, 5000)
+        return () => {
+            clearTimeout(timer);
+        };
+
     }, [])
+
     return (
         <div className="MyPage">
             <Image src={ImgSrc} />

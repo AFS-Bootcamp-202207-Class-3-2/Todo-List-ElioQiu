@@ -1,12 +1,10 @@
 import "./index.css";
 import {useDispatch} from "react-redux";
 import {doneTodo, removeTodo} from "../todosSlice";
-import {deleteTodo, updateTodo, updateTodoText} from "../../../api/todos";
+import {deleteTodo, updateTodo} from "../../../api/todos";
 import React, {useRef, useState} from "react";
 import {Button, Modal, Form, Input, Popconfirm} from "antd";
-import {DeleteOutlined, EditOutlined } from '@ant-design/icons';
-
-
+import {DeleteOutlined, EditOutlined} from '@ant-design/icons';
 
 
 export default function TodoItem(props) {
@@ -16,7 +14,7 @@ export default function TodoItem(props) {
     const updateForm = useRef(null);
 
     const onTodoDone = () => {
-        updateTodo(todo).then(response => {
+        updateTodo(todo.id, {done: !todo.done}).then(response => {
             dispatch(doneTodo(response.data));
         })
     }
@@ -31,10 +29,10 @@ export default function TodoItem(props) {
         setIsUpdateVisible(true)
     }
 
-    const submitUpdate = ()=>{
+    const submitUpdate = () => {
         updateForm.current.validateFields().then(value => {
             setIsUpdateVisible(false)
-            updateTodoText(todo.id, value).then(response => {
+            updateTodo(todo.id, value).then(response => {
                 dispatch(doneTodo(response.data));
             })
         })
@@ -54,7 +52,7 @@ export default function TodoItem(props) {
                     okText="Yes"
                     cancelText="No"
                 >
-                    <Button type="danger" shape="circle" icon={<DeleteOutlined/>} />
+                    <Button type="danger" shape="circle" icon={<DeleteOutlined/>}/>
                 </Popconfirm>
             </div>
 
@@ -74,10 +72,10 @@ export default function TodoItem(props) {
                     <Form.Item
                         name="text"
                         label="Todo Text"
-                        rules={[{ required: true, message: 'input your todo!' }]}
+                        rules={[{required: true, message: 'input your todo!'}]}
                         initialValue={todo.text}
                     >
-                        <Input />
+                        <Input/>
                     </Form.Item>
                 </Form>
             </Modal>
